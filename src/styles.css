@@ -116,4 +116,5 @@ FORM DATA
    line-height: var(--LHmed);
    font-family: var(--karlaFF);
    font-weight: 700;
+   cursor: pointer;
 }
