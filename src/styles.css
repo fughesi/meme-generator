@@ -2,33 +2,68 @@
  VARIABLES 
  *********/
  :root {
+   /* font family */
+    --memeFF: 'Titan One', cursive;
+    --interFF: 'Inter', sans-serif;
+    --karlaFF: 'Karla', sans-serif;
+
+   /* gradient */
     --grad: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
 
-    /* colors */
+   /* colors */
     --light: #ffffff;
 
-    /* sizes */
+   /* sizes */
     --memeText: 2rem;
     --small: .75rem;
     --med: 1rem;
     --large: 1.2969rem;
 
-    /* line heights */
+   /* line heights */
     --LHsmall: .9075rem;
     --LHmed: 1.16875rem;
     --LHlarge: 1.525rem;
     --LHmemes:  2.4375rem;
  }
 
- /*******
-  GENERAL 
-  *******/
- body {
-    font-family: 'Titan One', cursive;
-    font-family: 'Inter', sans-serif;
-    font-family: 'Karla', sans-serif;
+/*******
+GENERAL 
+*******/
+ #page {
+    margin: auto;
+    width: 550px;
+    display: grid;
+    grid-template: 65px 485px / 1fr;
  }
 
+/******
+HEADER
+******/
+ #headContainer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+
+    background: var(--grad);   
+    color: var(--light);
+ }
  #headContainer img {
-     height: 20px;
+    position: absolute;
+    transform: translateX(-35px);
+    height: 30px;
+   }
+ #headContainer h3 {
+    margin-left: 40px;
+    font-family: var(--karlaFF);
+    font-size: var(--large);
+    line-height: var(--LHlarge);
+    font-weight: 700;
+ }
+ #headContainer p {
+    font-family: var(--interFF);
+    font-size: var(--small);
+    line-height: var(--LHsmall);
+    font-weight: 500;
  }
