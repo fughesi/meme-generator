@@ -67,3 +67,14 @@ HEADER
     line-height: var(--LHsmall);
     font-weight: 500;
  }
+
+/*********
+FORM DATA 
+*********/
+#memeContainer {
+   display: flex;
+}
+#memeContainer input {
+   width: 100%;
+   border: violet;
+}
