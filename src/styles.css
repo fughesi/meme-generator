@@ -72,8 +72,6 @@ HEADER
 /*********
 FORM DATA 
 *********/
-#memeContainer {
-}
 #formEl {
    width: 100%;
    display: grid;
