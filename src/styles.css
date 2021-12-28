@@ -3,78 +3,119 @@
  *********/
  :root {
    /* font family */
-    --memeFF: 'Titan One', cursive;
-    --interFF: 'Inter', sans-serif;
-    --karlaFF: 'Karla', sans-serif;
+   --memeFF: 'Titan One', cursive;
+   --interFF: 'Inter', sans-serif;
+   --karlaFF: 'Karla', sans-serif;
 
    /* gradient */
-    --grad: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+   --grad: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
 
    /* colors */
-    --light: #ffffff;
+   --light: #ffffff;
 
    /* sizes */
-    --memeText: 2rem;
-    --small: .75rem;
-    --med: 1rem;
-    --large: 1.2969rem;
+   --memeText: 2rem;
+   --small: .75rem;
+   --med: 1rem;
+   --large: 1.2969rem;
 
    /* line heights */
-    --LHsmall: .9075rem;
-    --LHmed: 1.16875rem;
-    --LHlarge: 1.525rem;
-    --LHmemes:  2.4375rem;
+   --LHsmall: .9075rem;
+   --LHmed: 1.16875rem;
+   --LHlarge: 1.525rem;
+   --LHmemes:  2.4375rem;
  }
 
 /*******
 GENERAL 
 *******/
  #page {
-    margin: auto;
-    width: 550px;
-    display: grid;
-    grid-template: 65px 485px / 1fr;
+   box-sizing: border-box;
+   margin: auto;
+   width: 550px;
+   display: grid;
+   grid-template: 65px 485px / 1fr;
  }
 
 /******
 HEADER
 ******/
  #headContainer {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    padding: 0 10px;
-    position: relative;
+   display: flex;
+   align-items: baseline;
+   justify-content: space-between;
+   padding: 0 10px;
+   position: relative;
 
-    background: var(--grad);   
-    color: var(--light);
+   background: var(--grad);   
+   color: var(--light);
  }
  #headContainer img {
-    position: absolute;
-    transform: translateX(-35px);
-    height: 30px;
+   position: absolute;
+   transform: translateX(-35px);
+   height: 30px;
    }
  #headContainer h3 {
-    margin-left: 40px;
-    font-family: var(--karlaFF);
-    font-size: var(--large);
-    line-height: var(--LHlarge);
-    font-weight: 700;
+   margin-left: 40px;
+   font-family: var(--karlaFF);
+   font-size: var(--large);
+   line-height: var(--LHlarge);
+   font-weight: 700;
  }
  #headContainer p {
-    font-family: var(--interFF);
-    font-size: var(--small);
-    line-height: var(--LHsmall);
-    font-weight: 500;
+   font-family: var(--interFF);
+   font-size: var(--small);
+   line-height: var(--LHsmall);
+   font-weight: 500;
  }
 
 /*********
 FORM DATA 
 *********/
 #memeContainer {
-   display: flex;
 }
-#memeContainer input {
+#formEl {
    width: 100%;
-   border: violet;
+   display: grid;
+   grid-template: repeat(2, 50px) / repeat(2, calc(50% - 10px));
+   gap: 20px;
+   grid-template-areas: 
+      "a b"
+      "c c";
+
+   margin: 25px auto; 
+   width: 100%;
+   justify-self: center;
+   outline: none;
+}
+#formEl input {
+   width: 100%;
+   height: 40px;
+   padding: 0;
+   margin: 7px 0;
+   
+   border-radius: 7px;
+   border: .25px solid #999;
+   text-align: center;   
+   color: var(--light);
+}
+#formEl input:nth-child(1) {
+   grid-area: a;
+   margin: 0 auto 0 0 ;
+}
+#formEl input:nth-child(2) {
+   grid-area: b;
+   margin: 0 0 0 auto;
+}
+#formEl input:nth-child(3) {
+   grid-area: c;
+   margin: 0;
+   height: 100%;
+
+   background: var(--grad);
+   text-align: center;
+   font-size: var(--med);
+   line-height: var(--LHmed);
+   font-family: var(--karlaFF);
+   font-weight: 700;
 }
