@@ -75,11 +75,12 @@ FORM DATA
 #formEl {
    width: 100%;
    display: grid;
-   grid-template: repeat(2, 50px) / repeat(2, calc(50% - 10px));
+   grid-template: repeat(2, 50px) 500px / repeat(2, calc(50% - 10px));
    gap: 20px;
    grid-template-areas: 
       "a b"
-      "c c";
+      "c c"
+      "d d";
 
    margin: 25px auto; 
    width: 100%;
@@ -118,3 +119,12 @@ FORM DATA
    font-weight: 700;
    cursor: pointer;
 }
+
+/******
+ PHOTOS 
+ ******/
+ #photoContainer {
+    grid-area: d;
+    width: 10%;
+    height: 100%;
+ }
