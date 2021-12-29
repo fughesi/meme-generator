@@ -1,18 +1,29 @@
 import React, {useState} from "react"
+import memesData from "../data/memesData"
 import Data from "../data/memesData"
 
 export default function Meme() {
+
     // state variables
-    const [memeImage, setMemeImage] = useState("")
+    const [allMemeImages, setAllMemeImages] = React.useState(Data)
+    const [meme, setMeme] = React.useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg"
+    })
+
     // regular variables
-    const array = Data.data.memes
+    const array = allMemeImages.data.memes
     
-    //gets a new photo displayed from the Data
+    // gets a new photo displayed from the Data
     function newMeme(e) {
         e.preventDefault()
         let num = Math.floor(Math.random() * array.length)
         const photos = array[num].url
-        setMemeImage(i => photos)
+        setMeme(i => ({
+            ...i,
+            randomImage: photos
+        }))
     }
 
     return (
@@ -24,7 +35,9 @@ export default function Meme() {
                 <input type="submit" value="Get a new meme image" id="btn" onClick={newMeme} />
             </form>
             <div id="photoContainer">
-                <img src={memeImage} alt="this is your meme" />
+                <p>{meme.topText}</p>
+                <img src={meme.randomImage} alt="this is your meme" />
+                <p>{meme.bottomText}</p>
             </div>
         </div>
         </>
