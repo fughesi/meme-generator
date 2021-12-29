@@ -73,14 +73,13 @@ HEADER
 FORM DATA 
 *********/
 #formEl {
-   width: 100%;
+   width: 550px;
    display: grid;
-   grid-template: repeat(2, 50px) 500px / repeat(2, calc(50% - 10px));
+   grid-template: repeat(2, 50px) / repeat(2, calc(50% - 10px));
    gap: 20px;
    grid-template-areas: 
       "a b"
-      "c c"
-      "d d";
+      "c c";
 
    margin: 25px auto; 
    width: 100%;
@@ -124,7 +123,12 @@ FORM DATA
  PHOTOS 
  ******/
  #photoContainer {
-    grid-area: d;
-    width: 10%;
-    height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 550px;
+}
+#photoContainer img {
+   width: 550px;
+
  }
