@@ -15,6 +15,17 @@ export default function Meme() {
     // regular variables
     const array = allMemeImages.data.memes
     
+    function addText(event) {
+        event.preventDefault()
+        const{name, value, type} = event.target
+        setMeme(i=> ({
+            ...i,
+            [name]: value
+        }))
+    }
+
+    console.log(meme)
+
     // gets a new photo displayed from the Data
     function newMeme(e) {
         e.preventDefault()
@@ -30,9 +41,26 @@ export default function Meme() {
         <>
         <div id="memeContainer">
             <form id="formEl">
-                <input type="text"  placeholder="top text" id="topText" />
-                <input type="text"  placeholder="bottom text" id="bottomText" />
-                <input type="submit" value="Get a new meme image" id="btn" onClick={newMeme} />
+                <input 
+                    name="topText"
+                    type="text"  
+                    placeholder="top text" 
+                    id="topText" 
+                    onChange={addText}
+                />
+                <input 
+                    name="bottomText"
+                    type="text"  
+                    placeholder="bottom text" 
+                    id="bottomText" 
+                    onChange={addText}
+                />
+                <input 
+                    type="submit" 
+                    value="Get a new meme image" 
+                    id="btn" 
+                    onClick={newMeme} 
+                />
             </form>
             <div id="photoContainer">
                 <p>{meme.topText}</p>
