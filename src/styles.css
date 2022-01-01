@@ -95,21 +95,23 @@ FORM DATA
    border-radius: 7px;
    border: .25px solid #999;
    text-align: center;   
-   color: var(--light);
 }
 #formEl input:nth-child(1) {
-   grid-area: a;
-   margin: 0 auto 0 0 ;
+    grid-area: a;
+    margin: 0 auto 0 0 ;
+    color: black;
 }
 #formEl input:nth-child(2) {
-   grid-area: b;
-   margin: 0 0 0 auto;
+    grid-area: b;
+    margin: 0 0 0 auto;
+    color: black;
 }
 #formEl input:nth-child(3) {
    grid-area: c;
    margin: 0;
    height: 100%;
 
+   color: var(--light);
    background: var(--grad);
    text-align: center;
    font-size: var(--med);
@@ -123,12 +125,33 @@ FORM DATA
  PHOTOS 
  ******/
  #photoContainer {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 550px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
 }
 #photoContainer img {
-   width: 550px;
-
+    width: 550px;
+    z-index: -1;
  }
+#photoContainer #topText,
+#photoContainer #bottomText {
+    position: absolute;
+    
+    color: var(--light);
+    font-size: var(--memeText);
+    line-height: var(--LHmemes);
+    font-family: var(--memeFF);
+    text-shadow: 
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+#photoContainer #topText {
+    top: 10px;
+}
+#photoContainer #bottomText {
+    bottom: 10px;
+}

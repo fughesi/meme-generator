@@ -63,9 +63,9 @@ export default function Meme() {
                 />
             </form>
             <div id="photoContainer">
-                <p>{meme.topText}</p>
+                <p id="topText">{meme.topText}</p>
                 <img src={meme.randomImage} alt="this is your meme" />
-                <p>{meme.bottomText}</p>
+                <p id="bottomText">{meme.bottomText}</p>
             </div>
         </div>
         </>
