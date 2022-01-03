@@ -1,31 +1,35 @@
-import React, {useState} from "react"
-import memesData from "../data/memesData"
-import Data from "../data/memesData"
+import React from "react"
 
 export default function Meme() {
 
     // state variables
-    const [allMemeImages, setAllMemeImages] = React.useState(Data)
+    const [allMemeImages, setAllMemeImages] = React.useState()
     const [meme, setMeme] = React.useState({
         topText: "",
         bottomText: "",
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })
 
-    // regular variables
-    const array = allMemeImages.data.memes
-    
+    // effect hook to control for API
+    React.useEffect(()=> {
+    fetch("https://api.imgflip.com/get_memes")
+        .then(res=>res.json())
+        .then(data=>setAllMemeImages(data.data.memes))
+        console.log(allMemeImages)
+    }, [])
+
+        
+    // maintains state of topText and bottomText
     function addText(event) {
-        event.preventDefault()
-        const{name, value, type} = event.target
+        const{name, value} = event.target
         setMeme(i=> ({
             ...i,
             [name]: value
         }))
     }
-
-    console.log(meme)
-
+        
+    // variable for function below
+    const array = allMemeImages
     // gets a new photo displayed from the Data
     function newMeme(e) {
         e.preventDefault()

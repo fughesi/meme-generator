@@ -1,7 +1,7 @@
 /*********
  VARIABLES 
- *********/
- :root {
+**********/
+:root {
    /* font family */
    --memeFF: 'Titan One', cursive;
    --interFF: 'Inter', sans-serif;
@@ -29,7 +29,7 @@
 /*******
 GENERAL 
 *******/
- #page {
+#page {
    box-sizing: border-box;
    margin: auto;
    width: 550px;
@@ -40,7 +40,7 @@ GENERAL
 /******
 HEADER
 ******/
- #headContainer {
+#headContainer {
    display: flex;
    align-items: baseline;
    justify-content: space-between;
@@ -50,19 +50,19 @@ HEADER
    background: var(--grad);   
    color: var(--light);
  }
- #headContainer img {
+#headContainer img {
    position: absolute;
    transform: translateX(-35px);
    height: 30px;
    }
- #headContainer h3 {
+#headContainer h3 {
    margin-left: 40px;
    font-family: var(--karlaFF);
    font-size: var(--large);
    line-height: var(--LHlarge);
    font-weight: 700;
  }
- #headContainer p {
+#headContainer p {
    font-family: var(--interFF);
    font-size: var(--small);
    line-height: var(--LHsmall);
