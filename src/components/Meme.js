@@ -28,13 +28,11 @@ export default function Meme() {
         }))
     }
         
-    // variable for function below
-    const array = allMemeImages
     // gets a new photo displayed from the Data
     function newMeme(e) {
         e.preventDefault()
-        let num = Math.floor(Math.random() * array.length)
-        const photos = array[num].url
+        let num = Math.floor(Math.random() * allMemeImages.length)
+        const photos = allMemeImages[num].url
         setMeme(i => ({
             ...i,
             randomImage: photos
